@@ -95,9 +95,16 @@ button:active {
 #equals:active {
     transform: scale(1);
 }
-#clear, #delete {
+#clear, #delete, #point {
     background-color: #00a08b;
 }
-#clear:hover, #delete:hover {
+#clear:hover, #delete:hover, #point:hover {
     background-color: #007061;
+}
+
+#bottom-row {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;     /* Centra los botones verticalmente */
+    gap: 10px;               /* Espacio entre los botones */
 }

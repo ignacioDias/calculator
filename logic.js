@@ -12,7 +12,11 @@ operations.addEventListener("click", (event) => {
         output.innerText = "Error, put a number first! Start again";
         return;
     }
-    firstNumber = parseInt(output.innerText, 10);
+    if(output.innerText.includes("."))
+        firstNumber = parseFloat(output.innerText, 10);
+    else
+        firstNumber = parseInt(output.innerText, 10);
+
     output.innerText = '';
     operator = event.target.id;
 
@@ -24,6 +28,9 @@ equals.addEventListener("click", () => {
         output.innerText = "Error, start again!!";
         return;
     }
+    if(output.innerText.includes("."))
+        secondNumber = parseFloat(output.innerText, 10);
+    else
     secondNumber = parseInt(output.innerText, 10);
     output.innerText = '';
     switch(operator) {
@@ -78,3 +85,8 @@ numbers.addEventListener("click", (event) => {
         output.innerText += event.target.id;
 });
 
+const point = document.querySelector("#point");
+point.addEventListener("click", () => {
+    if(output.innerText !== "" && !isNaN(output.innerText) && !output.innerText.includes("."))
+        output.innerText += ".";
+});
